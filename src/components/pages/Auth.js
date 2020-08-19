@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import firebase from 'firebase';
-import { firebaseConfig } from '../../utils/firebase-config';
+import '../../utils/firebase-config';
 import { useRecoilValue } from 'recoil';
 import { authState } from '../../atom/authAtom';
 import { withRouter } from 'react-router-dom';
@@ -13,8 +13,6 @@ import Navbar from '../ui/Navbar';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-
-firebase.initializeApp(firebaseConfig);
 
 const uiConfig = {
   signInFlow: 'popup',
