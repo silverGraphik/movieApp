@@ -3,6 +3,10 @@ steps:
   - name: 'gcr.io/cloud-builders/npm'
     args: ['install']
 
+  # Install firebase tools
+  - name: 'gcr.io/cloud-builders/npm'
+    args: ['install', 'firebase-tools']
+
   # Add Config
   - name: 'gcr.io/cloud-builders/npm'
     args: ['run', 'config']
