@@ -1,18 +1,22 @@
 steps:
   # Install
-  - name: 'gcr.io/cloud-builders/npm'
+  - name: 'node:14.7.0'
+    entrypoint: npm
     args: ['install']
 
-  # Install firebase tools
-  - name: 'gcr.io/cloud-builders/npm'
+  # Install
+  - name: 'node:14.7.0'
+    entrypoint: npm
     args: ['install', 'firebase-tools']
 
   # Add Config
-  - name: 'gcr.io/cloud-builders/npm'
+  - name: 'node:14.7.0'
+    entrypoint: npm
     args: ['run', 'config']
 
   # Build
-  - name: 'gcr.io/cloud-builders/npm'
+  - name: 'node:14.7.0'
+    entrypoint: npm
     args: ['run', 'build']
 
   # Deploy
