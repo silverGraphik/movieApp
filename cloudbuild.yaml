@@ -14,5 +14,5 @@ steps:
       - |
         apt update -q
         apt install -q -y make
-        npm install firebase-tools@7.16.0
+        npm install firebase-tools
         make app
