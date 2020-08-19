@@ -7,7 +7,7 @@ steps:
   # Install
   - name: 'node:14.7.0'
     entrypoint: npm
-    args: ['install', 'firebase-tools']
+    args: ['install', 'firebase-tools@8.4.0']
 
   # Add Config
   - name: 'node:14.7.0'
