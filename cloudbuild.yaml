@@ -3,16 +3,16 @@ steps:
   - name: "gcr.io/cloud-builders/gcloud"
     entrypoint: bash
     args:
-      - '-c'
+      - "-c"
       - |
         apt update -q
         apt install -q -y make
   - name: "node:12"
     entrypoint: bash
     args:
-      - '-c'
+      - "-c"
       - |
-      apt update -q
-      apt install -q -y make
-      npm install firebase-tools@7.16.0
-      make app
+        apt update -q
+        apt install -q -y make
+        npm install firebase-tools@7.16.0
+        make app
