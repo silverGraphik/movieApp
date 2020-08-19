@@ -1,18 +1,16 @@
 steps:
   # Install
-  - name: 'gcr.io/cloud-builders/gcloud'
-    entrypoint: bash
-    args:
-      - '-c'
-      - |
-        apt update -q
-        apt install -q -y make
-  - name: 'node:12'
-    entrypoint: bash
-    args:
-      - '-c'
-      - |
-        apt update -q
-        apt install -q -y make
-        npm install -g firebase-tools@7.16.0
-        make app
+  - name: 'gcr.io/cloud-builders/npm'
+    args: ['install']
+
+  # Add Config
+  - name: 'gcr.io/cloud-builders/npm'
+    args: ['run', 'config']
+
+  # Build
+  - name: 'gcr.io/cloud-builders/npm'
+    args: ['run', 'build']
+
+  # Deploy
+  - name: 'gcr.io/$PROJECT_ID/firebase'
+    args: ['deploy']
