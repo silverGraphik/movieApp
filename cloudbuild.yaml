@@ -1,18 +1,18 @@
 steps:
   # Install
-  - name: "gcr.io/cloud-builders/gcloud"
+  - name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: bash
     args:
-      - "-c"
+      - '-c'
       - |
         apt update -q
         apt install -q -y make
-  - name: "node:12"
+  - name: 'node:12'
     entrypoint: bash
     args:
-      - "-c"
+      - '-c'
       - |
         apt update -q
         apt install -q -y make
-        npm install firebase-tools
+        npm install firebase
         make app
