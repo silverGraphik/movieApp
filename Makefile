@@ -9,10 +9,8 @@ TMP_FIREBASE_CONFIG_FILE = tmp_config.js
 app-config:
 	@echo "Retrieve config for "$(PROJECT)""
 ifndef PROJECT_ID
-	@firebase use $(PROJECT)
 	@firebase apps:sdkconfig WEB $(APP_ID) > $(TMP_FIREBASE_CONFIG_FILE)
 else
-	@firebase use $(PROJECT) --token $(shell cat $(FIREBASE_TOKEN_FILE))
 	@firebase apps:sdkconfig WEB $(APP_ID) --token $(shell cat $(FIREBASE_TOKEN_FILE)) > $(TMP_FIREBASE_CONFIG_FILE)
 endif
 	@bash -c 'cat <(echo "import * as firebase from \"firebase/app\";") tmp_config.js > $(FIREBASE_CONFIG_JS)'
